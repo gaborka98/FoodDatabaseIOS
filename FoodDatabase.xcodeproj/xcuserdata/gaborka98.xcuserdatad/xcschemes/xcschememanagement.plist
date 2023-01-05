@@ -7,7 +7,35 @@
 		<key>FoodDatabase.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+		<key>FoodDatabaseTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>FoodDatabaseUITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>EDA711892958CE4500DDFF69</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EDA711992958CE4700DDFF69</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EDA711A32958CE4700DDFF69</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
