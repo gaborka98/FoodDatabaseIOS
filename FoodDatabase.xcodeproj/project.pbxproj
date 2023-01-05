@@ -11,9 +11,12 @@
 		EDA711902958CE4500DDFF69 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7118F2958CE4500DDFF69 /* ContentView.swift */; };
 		EDA711922958CE4700DDFF69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA711912958CE4700DDFF69 /* Assets.xcassets */; };
 		EDA711952958CE4700DDFF69 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA711942958CE4700DDFF69 /* Preview Assets.xcassets */; };
-		EDA7119F2958CE4700DDFF69 /* FoodDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7119E2958CE4700DDFF69 /* FoodDatabaseTests.swift */; };
-		EDA711A92958CE4700DDFF69 /* FoodDatabaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA711A82958CE4700DDFF69 /* FoodDatabaseUITests.swift */; };
-		EDA711AB2958CE4700DDFF69 /* FoodDatabaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA711AA2958CE4700DDFF69 /* FoodDatabaseUITestsLaunchTests.swift */; };
+		EDD5722E2960431600BBAB53 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD5722D2960431600BBAB53 /* Food.swift */; };
+		EDD57233296045A000BBAB53 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = EDD57232296045A000BBAB53 /* CodeScanner */; };
+		EDD5723529607A8D00BBAB53 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD5723429607A8D00BBAB53 /* APICaller.swift */; };
+		EDD572382960B13D00BBAB53 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = EDD572372960B13D00BBAB53 /* AlertToast */; };
+		EDD713C72967402800DAFB51 /* ScannedFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD713C62967402800DAFB51 /* ScannedFoodView.swift */; };
+		EDDF0F752962292800022028 /* StorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDF0F742962292800022028 /* StorageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +43,11 @@
 		EDA711912958CE4700DDFF69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDA711942958CE4700DDFF69 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EDA7119A2958CE4700DDFF69 /* FoodDatabaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodDatabaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDA7119E2958CE4700DDFF69 /* FoodDatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDatabaseTests.swift; sourceTree = "<group>"; };
 		EDA711A42958CE4700DDFF69 /* FoodDatabaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodDatabaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDA711A82958CE4700DDFF69 /* FoodDatabaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDatabaseUITests.swift; sourceTree = "<group>"; };
-		EDA711AA2958CE4700DDFF69 /* FoodDatabaseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDatabaseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EDD5722D2960431600BBAB53 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		EDD5723429607A8D00BBAB53 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		EDD713C62967402800DAFB51 /* ScannedFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedFoodView.swift; sourceTree = "<group>"; };
+		EDDF0F742962292800022028 /* StorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDD57233296045A000BBAB53 /* CodeScanner in Frameworks */,
+				EDD572382960B13D00BBAB53 /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,9 +80,10 @@
 		EDA711812958CE4500DDFF69 = {
 			isa = PBXGroup;
 			children = (
+				EDDF0F732962290000022028 /* view */,
+				EDDF0F72296228F200022028 /* service */,
+				EDD5722C2960430100BBAB53 /* model */,
 				EDA7118C2958CE4500DDFF69 /* FoodDatabase */,
-				EDA7119D2958CE4700DDFF69 /* FoodDatabaseTests */,
-				EDA711A72958CE4700DDFF69 /* FoodDatabaseUITests */,
 				EDA7118B2958CE4500DDFF69 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,21 +117,29 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		EDA7119D2958CE4700DDFF69 /* FoodDatabaseTests */ = {
+		EDD5722C2960430100BBAB53 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				EDA7119E2958CE4700DDFF69 /* FoodDatabaseTests.swift */,
+				EDD5722D2960431600BBAB53 /* Food.swift */,
 			);
-			path = FoodDatabaseTests;
+			path = model;
 			sourceTree = "<group>";
 		};
-		EDA711A72958CE4700DDFF69 /* FoodDatabaseUITests */ = {
+		EDDF0F72296228F200022028 /* service */ = {
 			isa = PBXGroup;
 			children = (
-				EDA711A82958CE4700DDFF69 /* FoodDatabaseUITests.swift */,
-				EDA711AA2958CE4700DDFF69 /* FoodDatabaseUITestsLaunchTests.swift */,
+				EDD5723429607A8D00BBAB53 /* APICaller.swift */,
 			);
-			path = FoodDatabaseUITests;
+			path = service;
+			sourceTree = "<group>";
+		};
+		EDDF0F732962290000022028 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				EDDF0F742962292800022028 /* StorageView.swift */,
+				EDD713C62967402800DAFB51 /* ScannedFoodView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +158,10 @@
 			dependencies = (
 			);
 			name = FoodDatabase;
+			packageProductDependencies = (
+				EDD57232296045A000BBAB53 /* CodeScanner */,
+				EDD572372960B13D00BBAB53 /* AlertToast */,
+			);
 			productName = FoodDatabase;
 			productReference = EDA7118A2958CE4500DDFF69 /* FoodDatabase.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +234,10 @@
 				Base,
 			);
 			mainGroup = EDA711812958CE4500DDFF69;
+			packageReferences = (
+				EDD57231296045A000BBAB53 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				EDD572362960B13D00BBAB53 /* XCRemoteSwiftPackageReference "AlertToast" */,
+			);
 			productRefGroup = EDA7118B2958CE4500DDFF69 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,7 +281,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDA711902958CE4500DDFF69 /* ContentView.swift in Sources */,
+				EDD713C72967402800DAFB51 /* ScannedFoodView.swift in Sources */,
+				EDDF0F752962292800022028 /* StorageView.swift in Sources */,
 				EDA7118E2958CE4500DDFF69 /* FoodDatabaseApp.swift in Sources */,
+				EDD5722E2960431600BBAB53 /* Food.swift in Sources */,
+				EDD5723529607A8D00BBAB53 /* APICaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +293,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDA7119F2958CE4700DDFF69 /* FoodDatabaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +300,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDA711A92958CE4700DDFF69 /* FoodDatabaseUITests.swift in Sources */,
-				EDA711AB2958CE4700DDFF69 /* FoodDatabaseUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +444,8 @@
 				DEVELOPMENT_TEAM = 4Z2C9DLGR5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FoodDatabase;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to use camera to scan barcode";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,6 +475,8 @@
 				DEVELOPMENT_TEAM = 4Z2C9DLGR5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FoodDatabase;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to use camera to scan barcode";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -583,6 +611,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EDD57231296045A000BBAB53 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		EDD572362960B13D00BBAB53 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EDD57232296045A000BBAB53 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDD57231296045A000BBAB53 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+		EDD572372960B13D00BBAB53 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDD572362960B13D00BBAB53 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EDA711822958CE4500DDFF69 /* Project object */;
 }
