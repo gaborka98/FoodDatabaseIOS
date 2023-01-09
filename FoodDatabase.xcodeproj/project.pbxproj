@@ -88,9 +88,6 @@
 			children = (
 				EDD713CB296761A800DAFB51 /* FoodDatabaseUITests */,
 				EDD713C82967617200DAFB51 /* FoodDatabaseTests */,
-				EDDF0F732962290000022028 /* view */,
-				EDDF0F72296228F200022028 /* service */,
-				EDD5722C2960430100BBAB53 /* model */,
 				EDA7118C2958CE4500DDFF69 /* FoodDatabase */,
 				EDA7118B2958CE4500DDFF69 /* Products */,
 			);
@@ -109,6 +106,9 @@
 		EDA7118C2958CE4500DDFF69 /* FoodDatabase */ = {
 			isa = PBXGroup;
 			children = (
+				EDDF0F732962290000022028 /* view */,
+				EDDF0F72296228F200022028 /* service */,
+				EDD5722C2960430100BBAB53 /* model */,
 				EDA7118D2958CE4500DDFF69 /* FoodDatabaseApp.swift */,
 				EDA7118F2958CE4500DDFF69 /* ContentView.swift */,
 				EDA711912958CE4700DDFF69 /* Assets.xcassets */,
