@@ -24,7 +24,7 @@ struct StorageView: View {
                         isPresentingScanner = true
                     } label: {
                         Image(systemName: "barcode.viewfinder")
-                            .foregroundColor(.black)
+                            .foregroundColor(.none)
                     }
                 }
             }
