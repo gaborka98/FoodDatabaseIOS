@@ -34,7 +34,7 @@ struct FoodItemView: View {
         }
         .frame(maxWidth: 400)
         .padding(12)
-        .background(LinearGradient(colors: [.orange, .purple, .cyan], startPoint: UnitPoint(x: 0, y: 0), endPoint: UnitPoint(x: 1, y: 1)))
+        .background(LinearGradient(colors: [.orange, .purple, .cyan], startPoint: .topLeading, endPoint: .bottomTrailing))
         .cornerRadius(10)
     }
 }
