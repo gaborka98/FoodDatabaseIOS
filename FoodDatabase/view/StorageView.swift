@@ -14,8 +14,12 @@ struct StorageView: View {
     
     var body: some View {
         NavigationView {
-            Text("List of items")
-            
+            VStack{
+                ForEach(foods, id: \.self.id) { food in
+                    FoodItemView(food: food)
+                }
+                Spacer()
+            }
             .navigationTitle("Storage")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -34,6 +38,9 @@ struct StorageView: View {
 
 struct StorageView_preview: PreviewProvider {
     static var previews: some View {
-        StorageView(isPresentingScanner: .constant(false))
+        StorageView(isPresentingScanner: .constant(false), foods: [
+        Food(id: "asd123", name: "TestFood", quantity: 500, barcode: "1234567", allergens: [], ingredients: []),
+        Food(id: "dsa321", name: "TestPasta", quantity: 1000, barcode: "7654321", allergens: [], ingredients: [])
+        ])
     }
 }

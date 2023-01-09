@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED07BF7D296C9C3F0068E071 /* FoodItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07BF7C296C9C3F0068E071 /* FoodItemView.swift */; };
 		EDA7118E2958CE4500DDFF69 /* FoodDatabaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7118D2958CE4500DDFF69 /* FoodDatabaseApp.swift */; };
 		EDA711902958CE4500DDFF69 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7118F2958CE4500DDFF69 /* ContentView.swift */; };
 		EDA711922958CE4700DDFF69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA711912958CE4700DDFF69 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED07BF7C296C9C3F0068E071 /* FoodItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemView.swift; sourceTree = "<group>"; };
 		EDA7118A2958CE4500DDFF69 /* FoodDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA7118D2958CE4500DDFF69 /* FoodDatabaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDatabaseApp.swift; sourceTree = "<group>"; };
 		EDA7118F2958CE4500DDFF69 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED07BF7B296C9C150068E071 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				ED07BF7C296C9C3F0068E071 /* FoodItemView.swift */,
+			);
+			path = component;
+			sourceTree = "<group>";
+		};
 		EDA711812958CE4500DDFF69 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +116,7 @@
 		EDA7118C2958CE4500DDFF69 /* FoodDatabase */ = {
 			isa = PBXGroup;
 			children = (
+				ED07BF7B296C9C150068E071 /* component */,
 				EDDF0F732962290000022028 /* view */,
 				EDDF0F72296228F200022028 /* service */,
 				EDD5722C2960430100BBAB53 /* model */,
@@ -308,6 +319,7 @@
 				EDA711902958CE4500DDFF69 /* ContentView.swift in Sources */,
 				EDD713C72967402800DAFB51 /* ScannedFoodView.swift in Sources */,
 				EDDF0F752962292800022028 /* StorageView.swift in Sources */,
+				ED07BF7D296C9C3F0068E071 /* FoodItemView.swift in Sources */,
 				EDA7118E2958CE4500DDFF69 /* FoodDatabaseApp.swift in Sources */,
 				EDD5722E2960431600BBAB53 /* Food.swift in Sources */,
 				EDD5723529607A8D00BBAB53 /* APICaller.swift in Sources */,
