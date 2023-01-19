@@ -1,16 +1,7 @@
 import Foundation
 
-struct Storage : Page Codable {
+struct Storage : Codable {
     let content: [StorageFood]
-}
-
-struct StorageFood: Codable {
-	let totalCount: Int
-	let count: Int
-	let food: Food
-}
-
-protocol Page: Codable {
     let totalElements: Int
     let totalPages: Int
     let last: Bool
@@ -21,6 +12,12 @@ protocol Page: Codable {
     let number: Int
     let pageable: Pageable
     let sort: Sort
+}
+
+struct StorageFood: Codable {
+	let totalCount: Int
+	let count: Int
+	let food: Food
 }
 
 struct Sort: Codable {

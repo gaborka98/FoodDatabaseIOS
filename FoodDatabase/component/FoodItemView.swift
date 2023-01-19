@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct FoodItemView: View {
-    @State var food : Food
+    @State var food : StorageFood
+    
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         HStack(alignment: .center){
@@ -20,17 +22,18 @@ struct FoodItemView: View {
             }
                 
             VStack(alignment: .leading, spacing: 10){
-                Text(food.name)
-                    .foregroundColor(.white)
+                Text(food.food.name)
+                    .foregroundColor(Color(.white))
                     .fontWeight(.bold)
                     .shadow(radius: 0.5)
-                Text(food.barcode)
+                Text(food.food.barcode)
                     .fontWeight(.light)
                     .fontDesign(.rounded)
                     .shadow(radius: 0.5)
+                    .foregroundColor(.black)
             }
             Spacer()
-            Text("\(food.quantity.formatted()) g").shadow(radius: 0.5)
+            Text("\(food.count)x\(food.food.quantity.formatted()) g").shadow(radius: 0.5).foregroundColor(.black)
         }
         .frame(maxWidth: 400)
         .padding(12)
@@ -41,6 +44,6 @@ struct FoodItemView: View {
 
 struct FoodItemView_Previews: PreviewProvider {
     static var previews: some View {
-        FoodItemView(food: Food(id: nil, name: "testFood", quantity: 500, barcode: "1234567", allergens: ["test1", "test2","test3"], ingredients: ["testa","testb","testc"]))
+        FoodItemView(food: StorageFood(totalCount: 500, count: 5, food: Food(id: nil, name: "testFood", quantity: 100, barcode: "1234567", allergens: ["test1", "test2","test3"], ingredients: ["testa","testb","testc"])))
     }
 }

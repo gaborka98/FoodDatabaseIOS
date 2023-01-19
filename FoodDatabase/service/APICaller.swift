@@ -8,7 +8,7 @@
 import SwiftUI
 
 class ApiCaller: ObservableObject {
-    private let backendUrl: String = "http://192.168.2.31:8081/"
+    private let backendUrl: String = "http://192.168.2.55:8094/"
     
     static let shared = ApiCaller()
     
@@ -79,6 +79,39 @@ class ApiCaller: ObservableObject {
                         completion(.success(decodedFood))
                     } catch let decodeError{
                         //print("Error decoding: ", decodeError)
+                        completion(.failure(decodeError))
+                    }
+                }
+            }
+        }
+        
+        dataTask.resume()
+    }
+    
+    func getAllFood(completion: @escaping (Result<Storage, Error>)-> ()) {
+        guard let url = URL(string: backendUrl + "get-all") else {fatalError("Missing URL")}
+        let urlRequest = URLRequest(url: url)
+        
+        let dataTask = URLSession.shared.dataTask(with: urlRequest) {(data, response, error) in
+            if let error = error {
+                //print("Request error: ", error)
+                completion(.failure(error))
+            }
+            
+            guard let response = response as? HTTPURLResponse else {return}
+            
+            print(response)
+            
+            if response.statusCode == 200 {
+                guard let data = data else {return}
+                DispatchQueue.main.async {
+                    do {
+                        print(data)
+                        let decoded = try JSONDecoder().decode(Storage.self, from: data)
+                        print(decoded)
+                        completion(.success(decoded))
+                    } catch let decodeError{
+                        print("Error decoding: ", decodeError)
                         completion(.failure(decodeError))
                     }
                 }

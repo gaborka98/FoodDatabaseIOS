@@ -21,6 +21,7 @@
 		EDD713CE296761A800DAFB51 /* FoodDatabaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD713CC296761A800DAFB51 /* FoodDatabaseUITests.swift */; };
 		EDD713CF296761A800DAFB51 /* FoodDatabaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD713CD296761A800DAFB51 /* FoodDatabaseUITestsLaunchTests.swift */; };
 		EDDF0F752962292800022028 /* StorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDF0F742962292800022028 /* StorageView.swift */; };
+		EDE08D662979D63A00153995 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE08D652979D63A00153995 /* Storage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		EDD713CC296761A800DAFB51 /* FoodDatabaseUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDatabaseUITests.swift; sourceTree = "<group>"; };
 		EDD713CD296761A800DAFB51 /* FoodDatabaseUITestsLaunchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDatabaseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EDDF0F742962292800022028 /* StorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageView.swift; sourceTree = "<group>"; };
+		EDE08D652979D63A00153995 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		EDD5722C2960430100BBAB53 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				EDE08D652979D63A00153995 /* Storage.swift */,
 				EDD5722D2960431600BBAB53 /* Food.swift */,
 			);
 			path = model;
@@ -321,6 +324,7 @@
 				EDDF0F752962292800022028 /* StorageView.swift in Sources */,
 				ED07BF7D296C9C3F0068E071 /* FoodItemView.swift in Sources */,
 				EDA7118E2958CE4500DDFF69 /* FoodDatabaseApp.swift in Sources */,
+				EDE08D662979D63A00153995 /* Storage.swift in Sources */,
 				EDD5722E2960431600BBAB53 /* Food.swift in Sources */,
 				EDD5723529607A8D00BBAB53 /* APICaller.swift in Sources */,
 			);
@@ -489,6 +493,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -520,6 +525,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
