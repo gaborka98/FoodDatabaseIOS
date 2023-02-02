@@ -14,14 +14,26 @@ struct StorageView: View {
     @State var foods : [StorageFood] = []
     @State var errorMsg: String = ""
     @State var ShowErrorToast: Bool = false
+    @State private var offset = CGSize.zero
     
     var body: some View {
         NavigationView {
             VStack{
-                ForEach(foods, id: \.self.food.id) { food in
+                List(foods, id: \.self.food.id) { food in
                     FoodItemView(food: food)
+                        .swipeActions {
+                            Button(role:.destructive) {
+                                delete(food: food)
+                            } label: {
+                                Image(systemName: "trash")
+                            }
+                        }
+                        .frame(maxWidth: .infinity)
+                        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 }
-                Spacer()
+                .frame(maxWidth: .infinity)
+                .edgesIgnoringSafeArea(.horizontal)
+                .listStyle(GroupedListStyle())
             }
             .navigationTitle("Storage")
             .navigationBarTitleDisplayMode(.inline)
@@ -31,8 +43,8 @@ struct StorageView: View {
                         isPresentingScanner = true
                     } label: {
                         Image(systemName: "barcode.viewfinder")
-                            .foregroundColor(.none)
                     }
+                    .foregroundColor(Color(UIColor.label))
                 }
             }
         }.toast(isPresenting: $ShowErrorToast, duration: 4, tapToDismiss: true, alert: {
@@ -52,6 +64,10 @@ struct StorageView: View {
                 ShowErrorToast = true
             }
         })
+    }
+    
+    func delete(food: StorageFood) -> Void {
+        foods.removeAll(where: {$0.food.id == food.food.id})
     }
 }
 

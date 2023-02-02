@@ -10,8 +10,6 @@ import SwiftUI
 struct FoodItemView: View {
     @State var food : StorageFood
     
-    @Environment(\.colorScheme) var colorScheme
-    
     var body: some View {
         HStack(alignment: .center){
             ZStack{
