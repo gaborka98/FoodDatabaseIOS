@@ -21,15 +21,22 @@ struct StorageView: View {
             VStack{
                 List(foods, id: \.self.food.id) { food in
                     FoodItemView(food: food)
-                        .swipeActions {
+                        .swipeActions(edge: .trailing) {
                             Button(role:.destructive) {
                                 delete(food: food)
                             } label: {
                                 Image(systemName: "trash")
+                                Text("Delete")
                             }
                         }
-                        .frame(maxWidth: .infinity)
-                        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+                        .swipeActions(edge: .leading) {
+                            Button(role: .destructive) {
+                                deleteAll(food: food)
+                            } label: {
+                                Label("Delete all", systemImage: "trash")
+                            }
+                        }
+                        .listRowInsets(.init(top: 0, leading: 0, bottom: 10, trailing: 0))
                 }
                 .frame(maxWidth: .infinity)
                 .edgesIgnoringSafeArea(.horizontal)
@@ -67,7 +74,24 @@ struct StorageView: View {
     }
     
     func delete(food: StorageFood) -> Void {
-        foods.removeAll(where: {$0.food.id == food.food.id})
+        ApiCaller.shared.deleteFood(food: food.food) { result in
+            if result {
+                ApiCaller.shared.getAllFood { result in
+                    switch result{
+                    case .success(let storage):
+                        foods = storage.content
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                        errorMsg = error.localizedDescription
+                        ShowErrorToast = true
+                    }
+                }
+            }
+        }
+    }
+    
+    func deleteAll(food: StorageFood) -> Void {
+        
     }
 }
 

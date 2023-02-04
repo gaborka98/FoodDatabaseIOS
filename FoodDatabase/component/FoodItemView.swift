@@ -33,7 +33,7 @@ struct FoodItemView: View {
             Spacer()
             Text("\(food.count)x\(food.food.quantity.formatted()) g").shadow(radius: 0.5).foregroundColor(.black)
         }
-        .frame(maxWidth: 400)
+        .frame(maxWidth: .infinity, minHeight: 60)
         .padding(12)
         .background(LinearGradient(colors: [.orange, .purple, .cyan], startPoint: .topLeading, endPoint: .bottomTrailing))
         .cornerRadius(10)

@@ -16,7 +16,7 @@ class ApiCaller: ObservableObject {
     
     
     // MARK: addFood
-    func addFood(food: Food, completion:@escaping (Result<Food, Error>) -> ()) {
+    func addFood(food: Food, completion:@escaping (Result<Food, Error>) -> Void) {
         guard let url = URL(string: backendUrl + "add-food") else {fatalError("Missing URL")}
         
         let dataString = try? JSONEncoder().encode(food)
@@ -55,7 +55,7 @@ class ApiCaller: ObservableObject {
     }
     
     // MARK: getFood
-    func getFood(barcode: String, completion:@escaping (Result<Food, Error>) -> ()) {
+    func getFood(barcode: String, completion:@escaping (Result<Food, Error>) -> Void) {
         guard let url = URL(string: backendUrl + "get-food/\(barcode)") else {fatalError("Missing URL")}
         let urlRequest = URLRequest(url: url)
         
@@ -88,7 +88,8 @@ class ApiCaller: ObservableObject {
         dataTask.resume()
     }
     
-    func getAllFood(completion: @escaping (Result<Storage, Error>)-> ()) {
+    // MARK: getAllFood
+    func getAllFood(completion: @escaping (Result<Storage, Error>) -> Void) {
         guard let url = URL(string: backendUrl + "get-all") else {fatalError("Missing URL")}
         let urlRequest = URLRequest(url: url)
         
@@ -115,6 +116,65 @@ class ApiCaller: ObservableObject {
                         completion(.failure(decodeError))
                     }
                 }
+            }
+        }
+        
+        dataTask.resume()
+    }
+    
+    // MARK: deleteFood
+    func deleteFood(food: Food, completion: @escaping(Bool) -> Void) {
+        print("delete called!")
+        guard let id = food.id else { fatalError("Missing ID") }
+        
+        guard let url = URL(string: backendUrl + "delete/\(id)") else {fatalError("Missing URL")}
+        var urlRequest = URLRequest(url: url)
+        
+        urlRequest.httpMethod = "DELETE"
+        
+        let dataTask = URLSession.shared.dataTask(with: urlRequest) {(data, response, error) in
+            if let error = error {
+                print("Request error: ", error)
+                completion(false)
+            }
+            
+            guard let response = response as? HTTPURLResponse else {return}
+            
+            print(response)
+            
+            if response.statusCode == 200 {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
+        
+        dataTask.resume()
+    }
+    
+    // MARK: deleteStorageFood
+    func deleteStorageFood(food: StorageFood, completion: @escaping(Bool)-> Void) {
+        print("deleteStorageFood called")
+        
+        guard let url = URL(string: backendUrl + "delete-all/\(food.food.barcode)") else {fatalError("Missing URL")}
+        var urlRequest = URLRequest(url: url)
+        
+        urlRequest.httpMethod = "DELETE"
+        
+        let dataTask = URLSession.shared.dataTask(with: urlRequest) {(data, response, error) in
+            if let error = error {
+                print("Request error: ", error)
+                completion(false)
+            }
+            
+            guard let response = response as? HTTPURLResponse else {return}
+            
+            print(response)
+            
+            if response.statusCode == 200 {
+                completion(true)
+            } else {
+                completion(false)
             }
         }
         
