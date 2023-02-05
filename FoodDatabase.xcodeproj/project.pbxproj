@@ -12,6 +12,7 @@
 		EDA711902958CE4500DDFF69 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7118F2958CE4500DDFF69 /* ContentView.swift */; };
 		EDA711922958CE4700DDFF69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA711912958CE4700DDFF69 /* Assets.xcassets */; };
 		EDA711952958CE4700DDFF69 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA711942958CE4700DDFF69 /* Preview Assets.xcassets */; };
+		EDCC1360298EC6F100ADB5DD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC135F298EC6F100ADB5DD /* Extensions.swift */; };
 		EDD5722E2960431600BBAB53 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD5722D2960431600BBAB53 /* Food.swift */; };
 		EDD57233296045A000BBAB53 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = EDD57232296045A000BBAB53 /* CodeScanner */; };
 		EDD5723529607A8D00BBAB53 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD5723429607A8D00BBAB53 /* APICaller.swift */; };
@@ -50,6 +51,7 @@
 		EDA711942958CE4700DDFF69 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EDA7119A2958CE4700DDFF69 /* FoodDatabaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodDatabaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA711A42958CE4700DDFF69 /* FoodDatabaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodDatabaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDCC135F298EC6F100ADB5DD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EDD5722D2960431600BBAB53 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		EDD5723429607A8D00BBAB53 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		EDD713C62967402800DAFB51 /* ScannedFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedFoodView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				ED07BF7C296C9C3F0068E071 /* FoodItemView.swift */,
+				EDCC135F298EC6F100ADB5DD /* Extensions.swift */,
 			);
 			path = component;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				EDDF0F752962292800022028 /* StorageView.swift in Sources */,
 				ED07BF7D296C9C3F0068E071 /* FoodItemView.swift in Sources */,
 				EDA7118E2958CE4500DDFF69 /* FoodDatabaseApp.swift in Sources */,
+				EDCC1360298EC6F100ADB5DD /* Extensions.swift in Sources */,
 				EDE08D662979D63A00153995 /* Storage.swift in Sources */,
 				EDD5722E2960431600BBAB53 /* Food.swift in Sources */,
 				EDD5723529607A8D00BBAB53 /* APICaller.swift in Sources */,

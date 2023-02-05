@@ -14,4 +14,5 @@ struct Food: Codable {
     let barcode : String
     let allergens : [String]
     let ingredients : [String]
+    let photo : String?
 }

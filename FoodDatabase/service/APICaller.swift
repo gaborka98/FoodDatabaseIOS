@@ -9,6 +9,7 @@ import SwiftUI
 
 class ApiCaller: ObservableObject {
     private let backendUrl: String = "http://192.168.2.55:8094/"
+//    private let backendUrl: String = "http://192.168.2.41:8080/"
     
     static let shared = ApiCaller()
     
@@ -17,9 +18,15 @@ class ApiCaller: ObservableObject {
     
     // MARK: addFood
     func addFood(food: Food, completion:@escaping (Result<Food, Error>) -> Void) {
+        print("addFood called")
         guard let url = URL(string: backendUrl + "add-food") else {fatalError("Missing URL")}
-        
-        let dataString = try? JSONEncoder().encode(food)
+        var dataString: Data?
+        do {
+            dataString = try JSONEncoder().encode(food)
+        } catch let encodeError {
+            print("encoding error:", encodeError)
+            completion(.failure(encodeError))
+        }
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
@@ -34,13 +41,15 @@ class ApiCaller: ObservableObject {
             }
             
             guard let response = response as? HTTPURLResponse else {return}
+            print(response)
+            print(response.statusCode)
             if response.statusCode == 201 {
                 guard let data = data else {return}
                 
                 DispatchQueue.main.async {
                     do {
                         let decodedJSON = try JSONDecoder().decode(Food.self, from: data)
-                        print(decodedJSON)
+                        print("decoded JSON: ", decodedJSON)
                         completion(.success(decodedJSON))
                     } catch {
                         print("Error decoding: ", error)
@@ -61,7 +70,7 @@ class ApiCaller: ObservableObject {
         
         let dataTask = URLSession.shared.dataTask(with: urlRequest) {(data, response, error) in
             if let error = error {
-                //print("Request error: ", error)
+                print("Request error: ", error)
                 completion(.failure(error))
             }
             
@@ -78,7 +87,7 @@ class ApiCaller: ObservableObject {
                         print(decodedFood)
                         completion(.success(decodedFood))
                     } catch let decodeError{
-                        //print("Error decoding: ", decodeError)
+                        print("Error decoding: ", decodeError)
                         completion(.failure(decodeError))
                     }
                 }
@@ -153,10 +162,10 @@ class ApiCaller: ObservableObject {
     }
     
     // MARK: deleteStorageFood
-    func deleteStorageFood(food: StorageFood, completion: @escaping(Bool)-> Void) {
+    func deleteStorageFood(food: Food, completion: @escaping(Bool)-> Void) {
         print("deleteStorageFood called")
         
-        guard let url = URL(string: backendUrl + "delete-all/\(food.food.barcode)") else {fatalError("Missing URL")}
+        guard let url = URL(string: backendUrl + "delete-all/\(food.barcode)") else {fatalError("Missing URL")}
         var urlRequest = URLRequest(url: url)
         
         urlRequest.httpMethod = "DELETE"
