@@ -26,12 +26,11 @@ struct StorageView: View {
     
     @State var food : Food?
     
+    private var selectedFood: Food!
+    
     var body: some View {
         NavigationStack {
             VStack{
-//                NavigationLink(destination: ScannedFoodView(food: food, isPresentingScanner: $isPresentingScanner), isActive: $isShowScannedFoodView){
-//                    EmptyView()
-//                }
                 List(foods, id: \.self.food.id) { food in
                     FoodItemView(food: food)
                         .swipeActions(edge: .trailing) {
@@ -50,6 +49,9 @@ struct StorageView: View {
                             }
                         }
                         .listRowInsets(.init(top: 0, leading: 0, bottom: 10, trailing: 0))
+                        .onTapGesture {
+                            
+                        }
                 }
                 .frame(maxWidth: .infinity)
                 .edgesIgnoringSafeArea(.horizontal)
@@ -169,12 +171,12 @@ struct StorageView: View {
     }
 }
 
-struct StorageView_preview: PreviewProvider {
-    static var previews: some View {
-        StorageView(foods: [
-            StorageFood(totalCount: 500, count: 5, food: Food(id: "asd123", name: "TestFood", quantity: 500, barcode: "1234567", allergens: [], ingredients: [], photo: nil))
-        ,
-            StorageFood(totalCount: 1000, count: 10, food: Food(id: "dsa321", name: "TestPasta", quantity: 1000, barcode: "7654321", allergens: [], ingredients: [], photo: nil))
-        ])
-    }
-}
+//struct StorageView_preview: PreviewProvider {
+//    static var previews: some View {
+//        StorageView(foods: [
+//            StorageFood(totalCount: 500, count: 5, food: Food(id: "asd123", name: "TestFood", quantity: 500, barcode: "1234567", allergens: [], ingredients: [], photo: nil))
+//        ,
+//            StorageFood(totalCount: 1000, count: 10, food: Food(id: "dsa321", name: "TestPasta", quantity: 1000, barcode: "7654321", allergens: [], ingredients: [], photo: nil))
+//        ])
+//    }
+//}

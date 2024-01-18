@@ -8,8 +8,9 @@
 import SwiftUI
 
 class ApiCaller: ObservableObject {
-    private let backendUrl: String = "http://192.168.2.55:8094/"
+//    private let backendUrl: String = "http://192.168.2.55:8094/"
 //    private let backendUrl: String = "http://192.168.2.41:8080/"
+    private let backendUrl: String = "https://foods.sativus.space/"
     
     static let shared = ApiCaller()
     
